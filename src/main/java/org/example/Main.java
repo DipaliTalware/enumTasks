@@ -13,7 +13,7 @@ import java.util.Optional;
 
 public class Main {
     public static void main(String[] args) {
-        String day =  DaysOfWeekRunner.weekDayOrWeekendChecker(DayOfWeek.valueOf("SUNDAY"));
+        String day =  weekDayOrWeekendChecker(DayOfWeek.valueOf("SUNDAY"));
         System.out.println("It's a "+day);
 
         PersonRepository persons = new PersonRepository();
@@ -56,5 +56,12 @@ public class Main {
 //        Find persons by favorite Weekkday
         List<Person> personsWithFavoriteWeekday = persons.searchPersonByFavoriteWeekDay(DayOfWeek.FRIDAY);
         System.out.println(personsWithFavoriteWeekday);
+    }
+
+    public static String weekDayOrWeekendChecker(DayOfWeek day) {
+        if (day.equals(DayOfWeek.SATURDAY) || day.equals(DayOfWeek.SUNDAY)) {
+            return "Weekend";
+        }
+        return day.name();
     }
 }
