@@ -10,7 +10,6 @@ import java.util.Optional;
 //Step 4: Create a class PersonRepository with a list/map of persons.
 //Step 5: Write a method in the class PersonRepository that searches for and returns a person based on their id from the list/map. The method should return an Optional.
 //Step 6: In your main method, check if the person exists. If they do, print the name and favorite day of the week to the console.
-//If you have already completed this task earlier, you may work on the bonus task on the next page.
 
 public class Main {
     public static void main(String[] args) {
@@ -31,7 +30,7 @@ public class Main {
         //find person by ID
         Optional<Person> person = persons.searchPersonById(1);
         if (person.isPresent()){
-            System.out.println("person found"+ person.get().toString());
+            System.out.println("person found by ID: "+ person.get().toString());
         }
         else {
             System.out.println("Person not found");
